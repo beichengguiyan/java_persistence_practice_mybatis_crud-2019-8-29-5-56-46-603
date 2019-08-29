@@ -4,4 +4,27 @@
     <select id="selectAll" resultType="tws.entity.Employee">
         select * from `employee`;
     </select>
+    
+    <select id="selectOne" resultType="tws.entity.Employee">
+        select * from `employee` where id = #{id};
+    </select>
+    
+     <insert id="insert">
+        insert into `employee`(`id`,`name`,`age`)
+        values(#{employee.id},#{employee.name},#{employee.age});
+    </insert>
+    
+     <update id="updateOne">
+        update `employee` set
+        `name` = #{employee.name},
+        `age` = #{employee.age}
+        where `id` =#{employee.id};
+    </update>
+    
+     <delete id="deleteOne">
+        delete from `employee` 
+        where `id` =#{id};
+    </delete>
+ 
+    
 </mapper>
